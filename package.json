@@ -1,5 +1,5 @@
 {
-  "name": "dncngrl_01",
+  "name": "jade-stylus-es6-boilerplate",
   "version": "1.0.0",
   "description": "",
   "main": "gulpfile.js",
@@ -57,9 +57,11 @@
   },
   "browser": {
     "jquery": "./bower_components/jquery/dist/jquery.min.js",
-    "velocity": "./bower_components/velocity/velocity.min.js"
+    "velocity": "./bower_components/velocity/velocity.min.js",
+    "three": "./bower_components/three.js/build/three.min.js"
   },
   "browserify-shim": {
-    "jquery": "$"
+    "jquery": "$",
+    "three": "THREE"
   }
 }
