@@ -1,0 +1,53 @@
+.info
+  padding 120px 0 0
+
+  &__inner
+    width $width_base
+    margin 0 auto
+
+  &__box
+    border 1px solid $textColor_default
+    clearfix()
+
+    &Title
+      text-align center
+      margin 0
+      padding 40px 0
+      border-bottom 1px solid $textColor_default
+      font-size $fontSize_title
+
+    &Content
+      display table
+      table-layout fixed
+      width 100%
+
+      &Top
+        display table-cell
+        vertical-align top
+
+      &Bottom
+        display table-cell
+        vertical-align top
+        border-left 1px solid $textColor_default
+
+
+.info__list
+  display inline-block
+  margin 0 auto
+  padding 55px 0
+  position relative
+  left 50%
+  transform translateX(-50%)
+  clearfix()
+
+  &Title
+    float left
+    width 80px
+    clear both
+    margin 5px 0
+    font-size $fontSize_infoTitle
+    padding-top 3px
+
+  &Text
+    float left
+    margin 5px 0

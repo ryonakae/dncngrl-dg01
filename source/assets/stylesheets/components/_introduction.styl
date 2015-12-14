@@ -14,17 +14,42 @@
     &Text
       margin 0
       line-height 1
-      color $textColor_inverse
+      color $textColor_introduction
       font-size 40px
       font-weight bold
-      border 3px solid $textColor_inverse
+      border 3px solid $textColor_introduction
       padding 17px 30px
       letter-spacing 0.1em
+
+    &Bg01,
+    &Bg02,
+    &Bg03
+      background-color $color_white
+      opacity 0.3
+      position absolute
+
+    &Bg01
+      width 130px
+      height 170px
+      top -30px
+      left -30px
+
+    &Bg02
+      width 310px
+      height 50px
+      bottom -30px
+      right -40px
+
+    &Bg03
+      width 40px
+      height 40px
+      bottom 10px
+      right -20px
 
   &__text
     float right
     width 520px
-    color $textColor_inverse
+    color $textColor_introduction
     margin-top -5px
 
     p:first-child

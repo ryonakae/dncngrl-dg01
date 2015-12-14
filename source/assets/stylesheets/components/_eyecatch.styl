@@ -1,11 +1,13 @@
 .eyecatch
   position relative
-  height 700px
-  height 100vh
-  min-height 700px
-  max-height 1000px
+  height 800px
+  // height 100vh
+  // min-height 700px
+  // max-height 1000px
   background-color $bgColor_eyecatch
   text-align center
+  background url('../images/eyecatch_bg.jpg') no-repeat 50% 50%
+  background-size cover
 
   &__model
     position absolute
@@ -13,11 +15,32 @@
     top 0
     width 700px
     height 100%
+    overflow hidden
     background-color #aaa
     transform translateX(-50%)
 
+    &List
+      list-style-type none
+      margin 0
+      padding-left 0
+      position relative
+
+      &Item
+        position absolute
+        top 0
+        left 0
+        width 100%
+        height 100%
+        line-height 0
+        opacity 0
+
+        img
+          width 100%
+          height auto
+
   &__text
     color $textColor_eyecatch
+    font-weight normal
     position absolute
     width 100%
     top 50%
@@ -35,6 +58,7 @@
       font-size rem(40px)
 
     &Middle
+      font-weight bold
       display inline-block
       font-size rem(120px)
       margin-top 20px
@@ -58,8 +82,9 @@
   &__subText
     color $textColor_eyecatch
     position absolute
-    bottom 70px
+    bottom 60px
     width 100%
     left 50%
     transform translateX(-50%)
     font-size rem(25px)
+    background none

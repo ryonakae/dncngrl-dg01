@@ -7,30 +7,106 @@ html(lang='ja', prefix="og: http://ogp.me/ns#")
     script(src='assets/javascripts/bundle.js')
   body
     header.header
-      a.header__backIndex Back to dncngrl.com
-      ul.header__share
-        li.header__shareItem.header__shareItem--tw tweet
-        li.header__shareItem.header__shareItem--fb like
-        li.header__shareItem.header__shareItem--gp gplus
+      a(href='#', target='_blank').header__backIndex Back to dncngrl.com
+      .header__share
+        ul.share
+          li.share__item.share__item--tw tweet
+          li.share__item.share__item--fb like
+          li.share__item.share__item--gp gplus
+
 
     .eyecatch
       .eyecatch__model
+        ul.eyecatch__modelList
+          li.eyecatch__modelListItem
+            img(src="", alt="")
+
       h1.eyecatch__text
         span.eyecatch__textTop Dancing Girl. Vol.01
         span.eyecatch__textMiddle Orchid &amp; Violet
         span.eyecatch__textBottom 2015 Winter -Aikatsu! Illustrations-
-      a.eyecatch__subText 2015.8.16 Comic Market 88 3日目 東テ17a “Dancing Girl.”
+
+      a(href='#', target='_blank').eyecatch__subText 2015.8.16 Comic Market 88 3日目 東テ17a “Dancing Girl.”
+
 
     .introduction
       .introduction__inner
         div.introduction__title
           h2.introduction__titleText Introduction
-          .introduction__titleBg
-            span.introduction__titleBgParticle01
-            span.introduction__titleBgParticle02
-            span.introduction__titleBgParticle03
+          .introduction__titleBg01
+          .introduction__titleBg02
+          .introduction__titleBg03
 
         .introduction__text
           p あの「Soleil」のメンバーにして、ファッションブランド「SPICY AGEHA」の専属モデル、「美しき刃」こと紫吹蘭。そして「Dancing Diva」の一員、「ステージに咲く氷の華」氷上スミレ。そんなクールにして可憐な2人が、もし女性ファッション誌の巻頭特集を飾ったら……。
           p 「Dancing Girl. Vol.01 Orchid &amp; Violet」は、そんなコンセプトで制作した、「アイカツ！」の二次創作イラスト集です。
           p まるで、ゲーム・アニメから現実世界へ飛び出してきたようなアイドル2人の活躍をぜひ、ご覧ください。
+
+
+    .gallery
+      .gallery__inner
+        ul.gallery__list
+          li.gallery__listItem
+            img(src='assets/images/sample_01.jpg', alt='sample_01', width='1500', height='1000')
+          li.gallery__listItem
+            img(src='assets/images/sample_02.jpg', alt='sample_02', width='1500', height='1000')
+          li.gallery__listItem
+            img(src='assets/images/sample_03.jpg', alt='sample_03', width='1500', height='844')
+          li.gallery__listItem
+            img(src='assets/images/sample_04.jpg', alt='sample_04', width='1500', height='1125')
+
+
+    .info
+      .info__inner
+        .info__box
+          h2.info__boxTitle Item Information
+
+          .info__boxContent
+            .info__boxContentTop
+              dl.info__list
+                dt.info__listTitle 仕様
+                dd.info__listText B5縦 フルカラー 16P
+                dt.info__listTitle 頒布価格
+                dd.info__listText 500円
+
+            .info__boxContentBottom
+              dl.info__list
+                dt.info__listTitle 頒布場所
+                dd.info__listText
+                  | コミックマーケット89
+                  br
+                  a(href='#', target='_blank') - 1日目 東テ17a「Dancing Girl.」
+                  br
+                  a(href='#', target='_blank') - 1日目 東テ33a「Uncalms」
+
+
+    .credit
+      .credit__inner
+        hr.credit__border
+
+        h2.credit__title Credit
+
+        .credit__top
+          dl.credit__list
+            dt.credit__listRole Concept / Illustration / Graphic Design / Web Design &amp; Develop
+            dd.credit__listName
+              a(href='#', target='_blank') Ryo Nakae
+            dt.credit__listRole Guest Illustration / Special Thanks
+            dd.credit__listName
+              a(href='#', target='_blank') Daisuke Nagai
+            dd.credit__listName
+              a(href='#', target='_blank') futa
+
+
+    footer.footer
+      .footer__copyright
+        a(href='#', target='_blank').footer__copyrightTitle Dancing Girl.
+        p.footer__copyrightText
+          | &copy; DANCING GIRL. DESIGN AND ILLUSTRATION BY
+          a(href='', target='_blank') RYO NAKAE
+
+      .footer__share
+        ul.share
+          li.share__item.share__item--tw tweet
+          li.share__item.share__item--fb like
+          li.share__item.share__item--gp gplus
