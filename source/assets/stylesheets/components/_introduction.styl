@@ -1,0 +1,34 @@
+.introduction
+  background-image: linear-gradient( 35deg, $color_blue, $color_blue 10%, #ffccd2 )
+  padding 120px 0
+
+  &__inner
+    width $width_base
+    margin 0 auto
+    clearfix()
+
+  &__title
+    float left
+    position relative
+
+    &Text
+      margin 0
+      line-height 1
+      color $textColor_inverse
+      font-size 40px
+      font-weight bold
+      border 3px solid $textColor_inverse
+      padding 17px 30px
+      letter-spacing 0.1em
+
+  &__text
+    float right
+    width 520px
+    color $textColor_inverse
+    margin-top -5px
+
+    p:first-child
+      margin-top 0
+
+    p:last-child
+      margin-bottom 0
