@@ -1,7 +1,7 @@
 .eyecatch
-  // cursor move
+  cursor pointer
   position relative
-  height 800px
+  height 780px
   // height 100vh
   // min-height 700px
   // max-height 1000px
@@ -9,6 +9,16 @@
   text-align center
   background url('../images/eyecatch_bg.jpg') no-repeat 50% 50%
   background-size cover
+  overflow hidden
+
+  &.is-draggable
+    cursor col-resize
+
+    .eyecatch__model
+      z-index 1
+
+    // .eyecatch__text
+    //   opacity 0.7
 
   &__model
     pointer-events none
@@ -16,6 +26,7 @@
     width 926px
     height 800px
     left 50%
+    top -5%
     transform translateX(-50%)
     opacity 0
 
@@ -68,7 +79,7 @@
         left 0
         bottom -1px
         width 100%
-        height 5px
+        height 4px
         background-color $textColor_eyecatch
 
     &Bottom
@@ -78,11 +89,15 @@
 
 
   &__subText
-    color $textColor_eyecatch
     position absolute
-    bottom 60px
+    bottom 50px
     width 100%
     left 50%
+    z-index 2
     transform translateX(-50%)
-    font-size rem(25px)
-    background none
+
+    a
+      color $textColor_eyecatch
+      font-size rem(25px)
+      background none
+      font-weight bold
