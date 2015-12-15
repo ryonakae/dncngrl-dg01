@@ -1,5 +1,8 @@
 .introduction
-  background-image: linear-gradient( 35deg, $color_blue, $color_blue 10%, #ffccd2 )
+  background-image: linear-gradient( 35deg, $color_blue 0%, $color_blue 10%, #ffccd2 100% )
+  background-size 200% 200%
+  background-position: 0% 100%
+  animation introduction_gradation 30s ease infinite
   padding 120px 0
 
   &__inner
@@ -57,3 +60,12 @@
 
     p:last-child
       margin-bottom 0
+
+
+@keyframes introduction_gradation
+  0%
+    background-position: 0% 100%
+  50%
+    background-position: 100% 0%
+  100%
+    background-position: 0% 100%

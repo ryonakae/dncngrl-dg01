@@ -9,15 +9,32 @@
     top 50%
     transform translateY(-50%)
 
+    &Title
+      display inline-block
+      width 170px
+      height 40px
+      hide-text()
+      background url('../images/logo_footer.png') no-repeat
+      background-size 170px 40px
+      vertical-align middle
+
+      +retina-query(only screen, 2)
+        background-image url('../images/logo_footer-2x.png')
+
+      &:hover
+        opacity 0.7
+
     &Text
       display inline
       margin-left 15px
       color $textColor_footer
       font-size $fontSize_footer
+      vertical-align middle
 
       a
         color $textColor_footer
         background none
+        margin-left .5em
 
   &__share
     position absolute
