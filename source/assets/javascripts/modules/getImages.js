@@ -22,6 +22,7 @@ module.exports = function(){
   var images = '';
   for(var i = 0; i < imageList.length; i++){
     var url = './assets/images/model/model_'+imageList[i]+'.png';
+    // var url = '//file.brdr.jp/dncngrl_01/images/model/model_'+imageList[i]+'.png';
     images += '<img src="' + url + '" />';
   }
   $('#modelList').html(images);

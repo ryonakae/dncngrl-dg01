@@ -8,8 +8,38 @@
   background-color $bgColor_eyecatch
   text-align center
   background url('../images/eyecatch_bg.jpg') no-repeat 50% 50%
+  // background url('//file.brdr.jp/dncngrl_01/images/eyecatch_bg.jpg') no-repeat 50% 50%
   background-size cover
   overflow hidden
+
+
+  &__loading
+    &00,
+    &01,
+    &02
+      display none
+      color $textColor_eyecatch
+      position absolute
+      text-align center
+      width 100%
+      top 50%
+      left 50%
+      transform translate(-50%, -50%)
+
+    &00
+      font-size rem(80px)
+      font-style italic
+      font-weight bold
+
+      &.is-animation
+        display block
+        animation loading_flash 125ms linear infinite
+
+    &01,
+    &02
+      font-size rem(120px)
+      font-weight bold
+
 
 
   &__model
@@ -18,7 +48,7 @@
     width 926px
     height 800px
     left 50%
-    transform translate3d(-50%, -0.5%, 0)
+    transform translate3d(-50%, -0.25%, 0)
     opacity 0
 
     &.is-animation
@@ -51,6 +81,7 @@
     left 50%
     transform translate(-50%, -50%)
     margin 0
+    opacity 0
 
     > span
       text-align center
@@ -90,6 +121,7 @@
     left 50%
     z-index 2
     transform translateX(-50%)
+    opacity 0
 
     a
       color $textColor_eyecatch
@@ -118,8 +150,21 @@ body.is-draggable
 
 @keyframes model_floating
   0%
-    transform translate3d(-50%, -0.5%, 0)
+    transform translate3d(-50%, -0.25%, 0)
   50%
-    transform translate3d(-50%, 1.5%, 0)
+    transform translate3d(-50%, 0.75%, 0)
   100%
-    transform translate3d(-50%, -0.5%, 0)
+    transform translate3d(-50%, -0.25%, 0)
+
+
+@keyframes loading_flash
+  0%
+    opacity 0.6
+  49%
+    opacity 0.6
+  50%
+    opacity 1
+  99%
+    opacity 1
+  100%
+    opacity 0.6
