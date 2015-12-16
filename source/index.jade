@@ -21,12 +21,15 @@ html(lang='ja', prefix="og: http://ogp.me/ns#")
     script(src='assets/javascripts/bundle.js')
   body
     header.header
-      a(href='#', target='_blank').header__backIndex Back to dncngrl.com
+      a(href='http://dncngrl.com', target='_blank').header__backIndex Back to dncngrl.com
       .header__share
         ul.share
-          li.share__item.share__item--tw tweet
-          li.share__item.share__item--fb like
-          li.share__item.share__item--gp gplus
+          li.share__item.share__item--tw
+            <a href="https://twitter.com/share" class="twitter-share-button">Tweet</a>
+          li.share__item.share__item--fb
+            <div class="fb-like" data-layout="button" data-action="like" data-show-faces="false" data-share="false"></div>
+          li.share__item.share__item--gp
+            <div class="g-plusone" data-size="medium" data-annotation="none"></div>
 
 
     .eyecatch
@@ -41,7 +44,7 @@ html(lang='ja', prefix="og: http://ogp.me/ns#")
         span.eyecatch__textBottom 2015 Winter -Aikatsu! Illustrations-
 
       .eyecatch__subText
-        a(href='#', target='_blank') 2015.8.16 Comic Market 88 3日目 東テ17a “Dancing Girl.”
+        a(href='https://webcatalog-free.circle.ms/Circle/12311990', target='_blank') 2015.8.16 Comic Market 88 3日目 東テ17a “Dancing Girl.”
 
 
     .introduction
@@ -90,9 +93,9 @@ html(lang='ja', prefix="og: http://ogp.me/ns#")
                 dd.info__listText
                   | コミックマーケット89
                   br
-                  a(href='#', target='_blank') - 1日目 東テ17a「Dancing Girl.」
+                  a(href='https://webcatalog-free.circle.ms/Circle/12311990', target='_blank') - 1日目 東テ17a「Dancing Girl.」
                   br
-                  a(href='#', target='_blank') - 1日目 東テ33a「Uncalms」
+                  a(href='https://webcatalog-free.circle.ms/Circle/12325105', target='_blank') - 1日目 東テ33a「Uncalms」
 
 
     .credit
@@ -105,23 +108,32 @@ html(lang='ja', prefix="og: http://ogp.me/ns#")
           dl.credit__list
             dt.credit__listRole Concept / Illustration / Graphic Design / Web Design &amp; Develop
             dd.credit__listName
-              a(href='#', target='_blank') Ryo Nakae
+              a(href='http://brdr.jp', target='_blank') Ryo Nakae
             dt.credit__listRole Guest Illustration / Special Thanks
             dd.credit__listName
-              a(href='#', target='_blank') Daisuke Nagai
+              a(href='http://daisukenagai.com', target='_blank') Daisuke Nagai
             dd.credit__listName
-              a(href='#', target='_blank') futa
+              a(href='https://jypg.net/futa', target='_blank') futa
 
 
     footer.footer
       .footer__copyright
-        a(href='#', target='_blank').footer__copyrightTitle Dancing Girl.
+        a(href='http://dncngrl.com', target='_blank').footer__copyrightTitle Dancing Girl.
         p.footer__copyrightText
           | &copy; DANCING GIRL. DESIGN AND ILLUSTRATION BY
-          a(href='', target='_blank') RYO NAKAE
+          a(href='http://brdr.jp', target='_blank') RYO NAKAE
 
       .footer__share
         ul.share
-          li.share__item.share__item--tw tweet
-          li.share__item.share__item--fb like
-          li.share__item.share__item--gp gplus
+          li.share__item.share__item--tw
+            <a href="https://twitter.com/share" class="twitter-share-button">Tweet</a>
+          li.share__item.share__item--fb
+            <div class="fb-like" data-layout="button" data-action="like" data-show-faces="false" data-share="false"></div>
+          li.share__item.share__item--gp
+            <div class="g-plusone" data-size="medium" data-annotation="none"></div>
+
+
+    div#fb-root
+    <script async src="//platform.twitter.com/widgets.js" id="twitter-wjs"></script>
+    <script src="//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.0" id="facebook-jssdk" async></script>
+    <script src="//apis.google.com/js/platform.js" async></script>
