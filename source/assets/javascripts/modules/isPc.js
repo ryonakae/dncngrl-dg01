@@ -4,7 +4,7 @@ var ua = parser.getResult();
 var async = require('async');
 
 module.exports = function(){
-  if( ua.device.type === 'mobile' || ua.device.type === 'tablet' ){
+  if( ua.device.type === 'undefined' ){
     return true;
   } else {
     return false;

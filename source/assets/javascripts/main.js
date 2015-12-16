@@ -7,7 +7,7 @@ window.jQuery = window.$ = require('jquery');
 var velocity = require('velocity-animate');
 var imagesLoaded = require('imagesloaded');
 imagesLoaded.makeJQueryPlugin($);
-var isMobile = require('./modules/isMobile.js');
+var isPc = require('./modules/isPc.js');
 
 
 // ページ読み込み後の処理
@@ -19,7 +19,7 @@ $(function(){
 // 初期化関数
 function init(){
   // PCだけパララックス有効
-  if(!isMobile) require('./modules/parallax.js');
+  if(isPc) require('./modules/parallax.js')();
 
   // 画像取得
   require('./modules/getImages.js')();
@@ -35,7 +35,7 @@ function init(){
       easing: 'ease',
       complete: function(){
         // PCだけ回転&浮遊有効化
-        if(!isMobile){
+        if(isPc){
           require('./modules/rotateModel.js')();
           setTimeout(function(){
             $('.eyecatch__model').addClass('is-animation');

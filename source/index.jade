@@ -2,17 +2,17 @@ doctype html
 html(lang='ja', prefix="og: http://ogp.me/ns#")
   head
     meta(charset='UTF-8')
-    title dncngrl_01
+    title Dancing Girl. Vol.01 Orchid & Violet | C89 1日目東テ17a
 
-    meta(name="description", content="")
+    meta(name="description", content="「アイカツ！」の二次創作イラスト集「Dancing Girl. Vol.01 Orchid & Violet」の特設サイト。")
     meta(name="robots", content="index,follow")
     meta(name="viewport", content="width=1024")
 
-    meta(property="og:title", content="")
+    meta(property="og:title", content="Dancing Girl. Vol.01 Orchid & Violet | C89 1日目東テ17a")
     meta(property="og:type", content="website")
-    meta(property="og:url", content="")
-    meta(property="og:description", content="")
-    meta(property="og:site_name", content="")
+    meta(property="og:url", content="http://dncngrl.com/dg01")
+    meta(property="og:description", content="「アイカツ！」の二次創作イラスト集「Dancing Girl. Vol.01 Orchid & Violet」の特設サイト。")
+    meta(property="og:site_name", content="Dancing Girl.")
     meta(property="og:image", content="")
     meta(property="og:locale", content="ja_JP")
     meta(name="twitter:card", content="summary_large_image")
@@ -23,13 +23,7 @@ html(lang='ja', prefix="og: http://ogp.me/ns#")
     header.header
       a(href='http://dncngrl.com', target='_blank').header__backIndex Back to dncngrl.com
       .header__share
-        ul.share
-          li.share__item.share__item--tw
-            <a href="https://twitter.com/share" class="twitter-share-button">Tweet</a>
-          li.share__item.share__item--fb
-            <div class="fb-like" data-layout="button" data-action="like" data-show-faces="false" data-share="false"></div>
-          li.share__item.share__item--gp
-            <div class="g-plusone" data-size="medium" data-annotation="none"></div>
+        include _share
 
 
     .eyecatch
@@ -124,16 +118,4 @@ html(lang='ja', prefix="og: http://ogp.me/ns#")
           a(href='http://brdr.jp', target='_blank') RYO NAKAE
 
       .footer__share
-        ul.share
-          li.share__item.share__item--tw
-            <a href="https://twitter.com/share" class="twitter-share-button">Tweet</a>
-          li.share__item.share__item--fb
-            <div class="fb-like" data-layout="button" data-action="like" data-show-faces="false" data-share="false"></div>
-          li.share__item.share__item--gp
-            <div class="g-plusone" data-size="medium" data-annotation="none"></div>
-
-
-    div#fb-root
-    <script async src="//platform.twitter.com/widgets.js" id="twitter-wjs"></script>
-    <script src="//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.0" id="facebook-jssdk" async></script>
-    <script src="//apis.google.com/js/platform.js" async></script>
+        include _share
