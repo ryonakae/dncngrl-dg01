@@ -18,6 +18,8 @@ $(function(){
 
 // 初期化関数
 function init(){
+  var $model = $('#model');
+
   // PCだけパララックス有効
   if(isPc) require('./modules/parallax.js')();
 
@@ -25,8 +27,8 @@ function init(){
   require('./modules/getImages.js')();
 
   // アイキャッチのmodel画像のロードと回転有効化
-  $('.eyecatch__model').imagesLoaded(function(){
-    $('.eyecatch__model').velocity({
+  $model.imagesLoaded(function(){
+    $model.velocity({
       opacity: 1,
       top: 0
     }, {
@@ -38,7 +40,7 @@ function init(){
         if(isPc){
           require('./modules/rotateModel.js')();
           setTimeout(function(){
-            $('.eyecatch__model').addClass('is-animation');
+            $model.addClass('is-animation');
           }, 1000);
         }
       }

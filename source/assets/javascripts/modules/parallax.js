@@ -2,9 +2,9 @@ window.jQuery = window.$ = require('jquery');
 var velocity = require('velocity-animate');
 
 module.exports = function(){
-  var $stage = $('.eyecatch');
-  var $model = $('.eyecatch__model');
-  var $text = $('.eyecatch__text');
+  var $stage = $('#eyecatch');
+  var $model = $('#model');
+  var $text = $('#text');
   var pageX = 0;
   var pageY = 0;
   var winW = $(window).width();

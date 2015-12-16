@@ -2,9 +2,9 @@ window.jQuery = window.$ = require('jquery');
 var velocity = require('velocity-animate');
 
 module.exports = function(){
-  var $stage = $('.eyecatch');
-  var $model = $('.eyecatch__model');
-  var $sprite = $('.eyecatch__modelList');
+  var $stage = $('#eyecatch');
+  var $model = $('#model');
+  var $sprite = $('#modelList');
   var spriteSize = $sprite.children().eq(0).height();
   var spriteNumber = 30;
   var spritePage = 0;
