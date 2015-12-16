@@ -45,8 +45,8 @@ module.exports = function(){
 
       // modelのパララックス
       $model.velocity({
-        marginTop: pageY * 0.004,
-        marginLeft: pageX * 0.008
+        marginTop: pageY * -0.005,
+        marginLeft: pageX * -0.01
       }, {
         queue: false,
         duration: 400,

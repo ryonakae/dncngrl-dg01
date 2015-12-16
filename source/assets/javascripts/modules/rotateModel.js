@@ -15,7 +15,6 @@ module.exports = function(){
     $model.css({ 'top': '5px' });
 
     $('body').addClass('is-draggable');
-    $model.addClass('is-animation_paused');
     pageX = e.pageX;
 
     $stage.on('mousemove.rotateModel', function(e){
@@ -44,13 +43,11 @@ module.exports = function(){
       $model.css({ 'top': 0 });
       $stage.off('.rotateModel');
       $('body').removeClass('is-draggable');
-      $model.removeClass('is-animation_paused');
     });
     $(document).on('mouseup', function(e){
       $model.css({ 'top': 0 });
       $stage.off('.rotateModel');
       $('body').removeClass('is-draggable');
-      $model.removeClass('is-animation_paused');
     });
   });
 };

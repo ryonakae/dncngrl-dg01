@@ -25,18 +25,16 @@ body
   background-color $bgColor_default
   font-kerning normal
   color $textColor_default
-  min-width $width_base
+  min-width $width_base + 20
   text-align justify
   word-wrap break-word
   overflow-wrap break-word
-  overflow-x hidden
 
   +retina-query(only screen, 2)
     -webkit-font-smoothing antialiased
 
   // eyecatch rotate
   &.is-draggable
-    cursor col-resize
     user-select none
 
 

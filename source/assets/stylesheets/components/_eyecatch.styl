@@ -18,14 +18,11 @@
     width 926px
     height 800px
     left 50%
-    transform translate3d(-50%, -0.8%, 0)
+    transform translate3d(-50%, -0.5%, 0)
     opacity 0
 
     &.is-animation
-      animation model_floating 20s ease infinite
-
-    &.is-animation_paused
-      animation-play-state paused
+      animation model_floating 10s ease infinite
 
     &Inner
       position relative
@@ -103,8 +100,11 @@
 
 body.is-draggable
   .eyecatch
+    cursor move
+
     &__model
       z-index 1
+      animation-play-state paused
 
     &__text
       color transparent
@@ -118,8 +118,8 @@ body.is-draggable
 
 @keyframes model_floating
   0%
-    transform translate3d(-50%, -0.8%, 0)
+    transform translate3d(-50%, -0.5%, 0)
   50%
-    transform translate3d(-50%, 0.8%, 0)
+    transform translate3d(-50%, 1.5%, 0)
   100%
-    transform translate3d(-50%, -0.8%, 0)
+    transform translate3d(-50%, -0.5%, 0)
