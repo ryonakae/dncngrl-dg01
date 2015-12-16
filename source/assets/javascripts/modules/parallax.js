@@ -1,4 +1,5 @@
 window.jQuery = window.$ = require('jquery');
+var velocity = require('velocity-animate');
 
 module.exports = function(){
   var $stage = $('.eyecatch');
@@ -17,6 +18,10 @@ module.exports = function(){
   $stage.on('mouseenter', function(e){
     parallax();
 
+    $(document).on('mousedown', function(e){
+      $stage.off('.parallax');
+    });
+
     $(document).on('mouseup', function(e){
       parallax();
     });
@@ -27,23 +32,26 @@ module.exports = function(){
       // ウインドウ中心からの座標
       pageX = e.clientX - winW/2;
       pageY = e.clientY - winH/2;
-      console.log(pageX, pageY);
 
       // textのパララックス
-      $text.css({
-        marginTop: pageY * -0.02,
+      $text.velocity({
+        marginTop: pageY * -0.01,
         marginLeft: pageX * -0.02
+      }, {
+        queue: false,
+        duration: 400,
+        easing: 'easeOutExpo'
       });
 
       // modelのパララックス
-      $model.css({
-        marginTop: pageY * -0.005,
-        marginLeft: pageX * -0.005
+      $model.velocity({
+        marginTop: pageY * 0.004,
+        marginLeft: pageX * 0.008
+      }, {
+        queue: false,
+        duration: 400,
+        easing: 'easeOutExpo'
       });
-    });
-
-    $(document).on('mousedown', function(e){
-      $stage.off('.parallax');
     });
   };
 };

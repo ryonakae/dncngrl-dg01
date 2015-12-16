@@ -32,7 +32,12 @@ function init(){
       duration: 500,
       delay: 500,
       easing: 'ease',
-      complete: require('./modules/rotateModel.js')
+      complete: function(){
+        require('./modules/rotateModel.js')();
+        setTimeout(function(){
+          $('.eyecatch__model').addClass('is-animation');
+        }, 1000);
+      }
     });
   });
 };

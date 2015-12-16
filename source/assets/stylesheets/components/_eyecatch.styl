@@ -11,14 +11,6 @@
   background-size cover
   overflow hidden
 
-  &.is-draggable
-    cursor col-resize
-
-    .eyecatch__model
-      z-index 1
-
-    // .eyecatch__text
-    //   opacity 0.7
 
   &__model
     pointer-events none
@@ -26,9 +18,14 @@
     width 926px
     height 800px
     left 50%
-    top -5%
-    transform translateX(-50%)
+    transform translate3d(-50%, -0.8%, 0)
     opacity 0
+
+    &.is-animation
+      animation model_floating 20s ease infinite
+
+    &.is-animation_paused
+      animation-play-state paused
 
     &Inner
       position relative
@@ -45,6 +42,7 @@
       img
         width 100%
         height auto
+
 
   &__text
     pointer-events none
@@ -101,3 +99,27 @@
       font-size rem(25px)
       background none
       font-weight bold
+
+
+body.is-draggable
+  .eyecatch
+    &__model
+      z-index 1
+
+    &__text
+      color transparent
+      text-shadow 0px 0px 40px $textColor_eyecatch
+
+      &Middle
+        &:after
+          background-color transparent
+          box-shadow 0px 0px 60px $textColor_eyecatch
+
+
+@keyframes model_floating
+  0%
+    transform translate3d(-50%, -0.8%, 0)
+  50%
+    transform translate3d(-50%, 0.8%, 0)
+  100%
+    transform translate3d(-50%, -0.8%, 0)

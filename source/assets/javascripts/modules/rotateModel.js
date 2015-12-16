@@ -12,14 +12,13 @@ module.exports = function(){
   var thinMove = 5;
 
   $stage.on('mousedown', function(e){
-    $model.css({ top: '5px' });
+    $model.css({ 'top': '5px' });
 
-    $stage.addClass('is-draggable');
+    $('body').addClass('is-draggable');
+    $model.addClass('is-animation_paused');
     pageX = e.pageX;
 
     $stage.on('mousemove.rotateModel', function(e){
-      console.log('spritePage: ', spritePage);
-
       if(e.pageX >= pageX + thinMove){
         pageX = e.pageX;
 
@@ -41,15 +40,17 @@ module.exports = function(){
       $sprite.css({ 'top': '-' + spriteSize * spritePage +  'px' });
     });
 
-    $stage.on('mouseleave', function(e){
-      $model.css({ top: 0 });
+    $(document).on('mouseleave', function(e){
+      $model.css({ 'top': 0 });
       $stage.off('.rotateModel');
-      $stage.removeClass('is-draggable');
+      $('body').removeClass('is-draggable');
+      $model.removeClass('is-animation_paused');
     });
     $(document).on('mouseup', function(e){
-      $model.css({ top: 0 });
+      $model.css({ 'top': 0 });
       $stage.off('.rotateModel');
-      $stage.removeClass('is-draggable');
+      $('body').removeClass('is-draggable');
+      $model.removeClass('is-animation_paused');
     });
   });
 };
