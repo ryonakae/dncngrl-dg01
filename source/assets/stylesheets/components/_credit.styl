@@ -32,5 +32,49 @@
   &Name
     margin 18px 25px 0
     display inline-block
-    font-size $fontSize_creditName
+    font-size rem(22px)
     font-weight bold
+
+
++media-query($mq_tablet)
+  .credit
+    padding 0 0 $padding_section_tablet
+
+    &__inner
+      width 100%
+      padding 0 $padding_tablet
+
+    &__border
+      margin $padding_section_tablet auto ($padding_section_tablet - 10)
+      width 80px
+
+  .credit__list
+    margin-top 30px
+
+    &Role
+      margin-top 30px
+
+    &Name
+      margin-top 10px
+      font-size rem(20px)
+
+
++media-query($mq_smartphone)
+  .credit
+    padding 0 0 $padding_section_smartphone
+
+    &__inner
+      padding 0 $padding_smartphone
+
+    &__border
+      margin $padding_section_smartphone auto ($padding_section_smartphone - 10)
+      width 40px
+
+  .credit__list
+    margin-top 20px
+
+    &Role
+      margin-top 20px
+
+    &Name
+      margin 5px 10px 0

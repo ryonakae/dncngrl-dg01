@@ -21,3 +21,28 @@
 
       &:first-child
         margin-top 0
+
+
++media-query($mq_tablet)
+  .gallery
+    padding $padding_section_tablet 0
+
+    &__inner
+      width 100%
+      padding 0 $padding_tablet
+
+    &__list
+      &Item
+        margin-top 40px
+
+
++media-query($mq_smartphone)
+  .gallery
+    padding 0
+
+    &__inner
+      padding 0
+
+    &__list
+      &Item
+        margin-top 0

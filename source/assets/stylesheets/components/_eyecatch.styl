@@ -1,10 +1,29 @@
+@keyframes model_floating
+  0%
+    transform translate3d(-50%, -0.25%, 0)
+  50%
+    transform translate3d(-50%, 0.75%, 0)
+  100%
+    transform translate3d(-50%, -0.25%, 0)
+
+
+@keyframes loading_flash
+  0%
+    opacity 0.4
+  49%
+    opacity 0.4
+  50%
+    opacity 1
+  99%
+    opacity 1
+  100%
+    opacity 0.4
+
+
 .eyecatch
   cursor pointer
   position relative
   height 780px
-  // height 100vh
-  // min-height 700px
-  // max-height 1000px
   background-color $bgColor_eyecatch
   text-align center
   background url('../images/eyecatch_bg.jpg') no-repeat 50% 50%
@@ -23,6 +42,7 @@
       width 100%
       top 50%
       transform translateY(-50%)
+      line-height 1
 
     &Loader
       font-size rem(80px)
@@ -41,8 +61,7 @@
     width 926px
     height 800px
     left 50%
-    margin-left (926px / -2)
-    transform translate3d(0, -0.25%, 0)
+    transform translate3d(-50%, -0.25%, 0)
     opacity 0
 
     &.is-animation
@@ -120,10 +139,11 @@
     width 100%
     z-index 2
     opacity 0
+    font-size rem(25px)
+    line-height $lineHeight_title
 
     a
       color $textColor_eyecatch
-      font-size rem(25px)
       background none
       font-weight bold
 
@@ -146,23 +166,69 @@ body.is-draggable
           box-shadow 0px 0px 60px $textColor_eyecatch
 
 
-@keyframes model_floating
-  0%
-    transform translate3d(0, -0.25%, 0)
-  50%
-    transform translate3d(0, 0.75%, 0)
-  100%
-    transform translate3d(0, -0.25%, 0)
++media-query($mq_tablet)
+  .eyecatch
+    height 600px
+
+    &__loading
+      &Loader
+        font-size rem(50px)
+
+      &Text
+        font-size rem(80px)
+
+    &__model
+      width 695px
+      height 600px
+
+    &__text
+      &Top
+        font-size rem(30px)
+
+      &Middle
+        font-size rem(100px)
+        margin-top 15px
+
+        &:after
+          display none
+
+      &Bottom
+        font-size rem(14px)
+        margin-top 15px
+
+    &__subText
+      bottom 30px
+      font-size rem(20px)
 
 
-@keyframes loading_flash
-  0%
-    opacity 0.4
-  49%
-    opacity 0.4
-  50%
-    opacity 1
-  99%
-    opacity 1
-  100%
-    opacity 0.4
++media-query($mq_smartphone)
+  .eyecatch
+    height 400px
+    cursor auto
+
+    &__loading
+      &Loader
+        font-size rem(30px)
+
+      &Text
+        font-size rem(60px)
+
+    &__model
+      width 463px
+      height 400px
+
+    &__text
+      &Top
+        font-size rem(20px)
+
+      &Middle
+        font-size rem(60px)
+        margin-top 10px
+
+      &Bottom
+        font-size rem(11px)
+        margin-top 10px
+
+    &__subText
+      bottom 20px
+      font-size rem(14px)

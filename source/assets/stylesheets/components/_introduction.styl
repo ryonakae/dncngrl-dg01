@@ -1,3 +1,12 @@
+@keyframes introduction_gradation
+  0%
+    background-position: 0% 100%
+  50%
+    background-position: 100% 0%
+  100%
+    background-position: 0% 100%
+
+
 .introduction
   background-image: linear-gradient( 35deg, $color_blue 0%, $color_blue 10%, #ffccd2 100% )
   background-size 200% 200%
@@ -18,7 +27,7 @@
       margin 0
       line-height 1
       color $textColor_introduction
-      font-size 40px
+      font-size rem(40px)
       font-weight bold
       border 3px solid $textColor_introduction
       padding 17px 30px
@@ -62,10 +71,38 @@
       margin-bottom 0
 
 
-@keyframes introduction_gradation
-  0%
-    background-position: 0% 100%
-  50%
-    background-position: 100% 0%
-  100%
-    background-position: 0% 100%
++media-query($mq_tablet)
+  .introduction
+    padding $padding_section_tablet 0
+
+    &__inner
+      width 100%
+      padding 0 $padding_tablet
+
+    &__title
+      float none
+
+      &Text
+        text-align center
+        font-size $fontSize_title
+        border none
+        padding 0
+        letter-spacing inherit
+
+      &Bg01,
+      &Bg02,
+      &Bg03
+        display none
+
+    &__text
+      float none
+      width 100%
+      margin-top 40px
+
+
++media-query($mq_smartphone)
+  .introduction
+    padding $padding_section_smartphone 0
+
+    &__text
+      margin-top 25px

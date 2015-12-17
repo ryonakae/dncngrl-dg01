@@ -5,7 +5,7 @@
 
   &__copyright
     position absolute
-    left 40px
+    left $padding_base
     top 50%
     transform translateY(-50%)
 
@@ -25,8 +25,8 @@
         opacity 0.7
 
     &Text
-      display inline
-      margin-left 15px
+      display inline-block
+      margin 0 0 0 15px
       color $textColor_footer
       font-size $fontSize_footer
       vertical-align middle
@@ -38,6 +38,42 @@
 
   &__share
     position absolute
-    right 40px
+    right $padding_base
     top 50%
     transform translateY(-50%)
+
+
++media-query($mq_tablet)
+  .footer
+    height 80px
+
+    &__copyright
+      left $padding_tablet
+
+      &Title
+        display none
+
+      &Text
+        margin-left 0
+
+    &__share
+      right $padding_tablet
+
+
++media-query($mq_smartphone)
+  .footer
+    height auto
+    padding 20px $padding_smartphone
+    text-align center
+
+    &__copyright,
+    &__share
+      position static
+      transform none
+
+    &__share
+      margin-top 10px
+      line-height 0
+
+      > .share
+        display inline-block

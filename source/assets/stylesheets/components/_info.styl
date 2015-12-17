@@ -51,3 +51,64 @@
   &Text
     float left
     margin 5px 0
+
+
+
++media-query($mq_tablet)
+  .info
+    padding $padding_section_tablet 0 0
+
+    &__inner
+      width 100%
+      padding 0 $padding_tablet
+
+    &__box
+      &Title
+        padding 25px 0
+
+      &Content
+        &Top
+          display block
+
+        &Bottom
+          display block
+          border-left none
+          border-top 1px solid $textColor_default
+
+
+  .info__list
+    padding 25px 0
+    vertical-align middle
+
+
++media-query($mq_smartphone)
+  .info
+    padding $padding_section_smartphone 0 0
+
+    &__inner
+      width 100%
+      padding 0 $padding_smartphone
+
+    &__box
+      &Title
+        padding 20px 0
+
+      &Content
+        &Top
+          display block
+
+        &Bottom
+          display block
+          border-left none
+          border-top 1px solid $textColor_default
+
+  .info__list
+    padding 20px 0
+    text-align center
+
+    &Title
+      float none
+      width auto
+
+    &Text
+      float none

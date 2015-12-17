@@ -8,11 +8,37 @@
     background-color $bgColor_backIndex
     color $textColor_inverse
     font-style italic
-    font-size $fontSize_backIndex
-    padding 13px 30px
+    font-size rem(15px)
+    height 50px
+    line-height 50px
+    padding 0 30px
 
   &__share
     position absolute
     z-index 10
     top 30px
-    right 40px
+    right $padding_base
+
+
++media-query($mq_tablet)
+  .header
+    &__backIndex
+      font-size rem(13px)
+      height 40px
+      line-height 40px
+      padding 0 15px
+
+    &__share
+      right $padding_tablet
+      top 20px
+
++media-query($mq_smartphone)
+  .header
+    &__backIndex
+      height 30px
+      line-height 30px
+      font-size rem(11px)
+      padding 0 10px
+
+    &__share
+      display none

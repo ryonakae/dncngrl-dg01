@@ -25,13 +25,15 @@ body
   background-color $bgColor_default
   font-kerning normal
   color $textColor_default
-  min-width $width_base + 20
   text-align justify
   word-wrap break-word
   overflow-wrap break-word
 
   +retina-query(only screen, 2)
     -webkit-font-smoothing antialiased
+
+  // +media-query($mq_tablet)
+  //   overflow-x hidden
 
   // eyecatch rotate
   &.is-draggable
