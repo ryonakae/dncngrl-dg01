@@ -16,23 +16,21 @@ module.exports = function(){
   // アイキャッチとテキストのフェードイン
   $model.imagesLoaded(function(){
     // modelのフェードイン
-    $model.velocity({
-      opacity: 1,
-      top: 0
-    }, {
-      duration: 500,
-      delay: 1500,
-      easing: 'ease',
-      complete: function(){
-        // snsボタン読み込み
-        require('./loadSnsButtons.js')();
-      }
-    });
+    // スマホ時だけ、velocityだとtransformがバグるのでanimateで
+    setTimeout(function(){
+      $model.animate({
+        'opacity': 1,
+        'top': 0
+      }, 500, 'swing');
+    }, 1500);
 
     // テキストのフェードイン
     // スマホ時だけ、velocityだとtransformがバグるのでanimateで
     setTimeout(function(){
       $text.animate({ 'opacity':1 }, 500, 'swing');
     }, 1500);
+
+    // snsボタン読み込み
+    setTimeout(require('./loadSnsButtons.js'), 2000);
   });
 };

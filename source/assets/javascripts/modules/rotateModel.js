@@ -50,4 +50,14 @@ module.exports = function(){
       $('body').removeClass('is-draggable');
     });
   });
+
+
+  // リサイズ時：リセットする
+  $(window).on('resize', function(){
+    // スプライト画像の高さ再取得する
+    spriteSize = $sprite.children().eq(0).height();
+
+    // 高さリセット
+    $sprite.css({ 'top': '0px' });
+  });
 };
