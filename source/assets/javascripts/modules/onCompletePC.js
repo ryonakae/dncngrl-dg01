@@ -8,6 +8,7 @@ var intro = require('./intro.js');
 module.exports = function(){
   var $model = $('#model');
   var $text = $('#text, #subText');
+  var $drag = $('#eyecatchDrag');
 
   // アイキャッチの回転有効化
   $model.imagesLoaded(function(){
@@ -40,6 +41,20 @@ module.exports = function(){
         delay: 1500,
         easing: 'ease'
       });
+
+      // dragのフェードイン
+      $drag.velocity({
+        opacity: 1
+      }, {
+        display: 'block',
+        duration: 500,
+        delay: 1500,
+        easing: 'ease',
+        complete: function(){
+          // 点滅アニメーション開始
+          $(this).addClass('is-animation');
+        }
+      }).bind(this);
     });
   });
 };

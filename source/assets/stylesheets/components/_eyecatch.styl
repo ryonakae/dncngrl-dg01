@@ -20,6 +20,15 @@
     opacity 0.4
 
 
+@keyframes drag_blink
+  0%
+    opacity 1
+  50%
+    opacity 0
+  100%
+    opacity 1
+
+
 .eyecatch
   cursor pointer
   position relative
@@ -148,6 +157,25 @@
       font-weight bold
 
 
+  &__drag
+    position absolute
+    left 25px
+    bottom 25px
+    width 82px
+    height 40px
+    hide-text()
+    background url('../images/eyecatch_drag.png') no-repeat
+    background-size 82px 40px
+    opacity 0
+    display none
+
+    &.is-animation
+      animation drag_blink 3s ease infinite
+
+    +retina-query(only screen, 2)
+      background-image url('../images/eyecatch_drag-2x.png')
+
+
 body.is-draggable
   .eyecatch
     cursor move
@@ -164,6 +192,11 @@ body.is-draggable
         &:after
           background-color transparent
           box-shadow 0px 0px 60px $textColor_eyecatch
+
+    &__drag
+      // velocityでフェードイン時にdisplay:blockしちゃってるので、
+      // 仕方なく!important指定
+      display none !important
 
 
 +media-query($mq_tablet)
