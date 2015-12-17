@@ -58,6 +58,8 @@ function onCompletePC(){
           setTimeout(function(){
             $model.addClass('is-animation');
           }, 1000);
+          // snsボタン読み込み
+          require('./modules/loadSnsButtons.js')();
         }
       });
 
@@ -93,7 +95,11 @@ function onCompleteSP(){
     }, {
       duration: 500,
       delay: 2000,
-      easing: 'ease'
+      easing: 'ease',
+      complete: function(){
+        // snsボタン読み込み
+        require('./modules/loadSnsButtons.js')();
+      }
     });
 
     // テキストのフェードイン
