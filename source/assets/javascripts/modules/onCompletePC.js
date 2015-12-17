@@ -13,7 +13,7 @@ module.exports = function(){
   $model.imagesLoaded(function(){
     // イントロ再生&再生後の処理
     intro(function(){
-      // アイキャッチのフェードインと回転有効化
+      // modelのフェードインと回転有効化
       $model.velocity({
         opacity: 1,
         top: 0
