@@ -2,12 +2,14 @@
 
 (function(){
 
-// require npm package
 window.jQuery = window.$ = require('jquery');
 var velocity = require('velocity-animate');
 var imagesLoaded = require('imagesloaded');
 imagesLoaded.makeJQueryPlugin($);
-var isPc = require('./modules/isPc.js');
+var UAParser = require('ua-parser-js');
+var parser = new UAParser();
+var ua = parser.getResult();
+var async = require('async');
 var intro = require('./modules/intro.js');
 
 
@@ -24,14 +26,17 @@ function init(){
 
   // ちょい遅延させてローディング出す
   setTimeout(function(){
-    $('.eyecatch__loading00').addClass('is-animation');
+    $('#loadingLoader').css({ 'display':'block' });
   }, 500);
-  onComplete();
+  // ローディング出したあとの処理
+  // PCとSPで分岐
+  if( ua.device.type === 'mobile' || ua.device.type === 'tablet' ) onCompleteSP();
+  else onCompletePC();
 };
 
 
-// 画像読み込み完了時に実行する関数
-function onComplete(){
+// 画像読み込み完了時に実行する関数：PC
+function onCompletePC(){
   var $model = $('#model');
   var $text = $('#text, #subText');
 
@@ -48,14 +53,11 @@ function onComplete(){
         delay: 1500,
         easing: 'ease',
         complete: function(){
-          // PCだけ回転&浮遊&パララックス有効化
-          if(isPc){
-            require('./modules/parallax.js')();
-            require('./modules/rotateModel.js')();
-            setTimeout(function(){
-              $model.addClass('is-animation');
-            }, 1000);
-          }
+          require('./modules/parallax.js')();
+          require('./modules/rotateModel.js')();
+          setTimeout(function(){
+            $model.addClass('is-animation');
+          }, 1000);
         }
       });
 
@@ -67,6 +69,40 @@ function onComplete(){
         delay: 1500,
         easing: 'ease'
       });
+    });
+  });
+}
+
+
+// 画像読み込み完了時に実行する関数：SP
+function onCompleteSP(){
+  var $model = $('#model');
+  var $text = $('#text, #subText');
+
+  // ローディング消す
+  setTimeout(function(){
+    $('#loadingLoader').css({ 'display':'none' });
+  }, 500);
+
+  // アイキャッチとテキストのフェードイン
+  $model.imagesLoaded(function(){
+    // アイキャッチのフェードイン
+    $model.velocity({
+      opacity: 1,
+      top: 0
+    }, {
+      duration: 500,
+      delay: 2000,
+      easing: 'ease'
+    });
+
+    // テキストのフェードイン
+    $text.velocity({
+      opacity: 1
+    }, {
+      duration: 500,
+      delay: 2000,
+      easing: 'ease'
     });
   });
 }

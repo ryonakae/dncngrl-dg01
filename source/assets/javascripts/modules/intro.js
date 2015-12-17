@@ -2,13 +2,17 @@ window.jQuery = window.$ = require('jquery');
 var velocity = require('velocity-animate');
 
 module.exports = function(onComplete){
+  var $loader = $('#loadingLoader');
+  var $text01 = $('#loadingText01');
+  var $text02 = $('#loadingText02');
+
   // ローディング消す
   setTimeout(function(){
-    $('.eyecatch__loading00').removeClass('is-animation');
+    $loader.css({ 'display':'none' });
   }, 500);
 
   // 1つめのテキスト出す
-  $('.eyecatch__loading01').velocity({
+  $text01.velocity({
     opacity: 1
   }, {
     display: 'block',
@@ -27,7 +31,7 @@ module.exports = function(onComplete){
   }).bind(this);
 
   // 2つ目のテキスト出す
-  $('.eyecatch__loading02').velocity({
+  $text02.velocity({
     opacity: 1
   }, {
     display: 'block',

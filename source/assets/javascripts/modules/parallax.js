@@ -3,8 +3,8 @@ var velocity = require('velocity-animate');
 
 module.exports = function(){
   var $stage = $('#eyecatch');
-  var $model = $('#model');
-  var $text = $('#text');
+  var $modelInner = $('#modelInner');
+  var $textInner = $('#textInner');
   var pageX = 0;
   var pageY = 0;
   var winW = $(window).width();
@@ -34,9 +34,10 @@ module.exports = function(){
       pageY = e.clientY - winH/2;
 
       // textのパララックス
-      $text.velocity({
-        marginTop: pageY * -0.01,
-        marginLeft: pageX * -0.02
+      $textInner.velocity({
+        translateZ: 0,
+        translateY: pageY * -0.02,
+        translateX: pageX * -0.03
       }, {
         queue: false,
         duration: 400,
@@ -44,9 +45,10 @@ module.exports = function(){
       });
 
       // modelのパララックス
-      $model.velocity({
-        marginTop: pageY * -0.005,
-        marginLeft: pageX * -0.01
+      $modelInner.velocity({
+        translateZ: 0,
+        translateY: pageY * -0.007,
+        translateX: pageX * -0.01
       }, {
         queue: false,
         duration: 400,
