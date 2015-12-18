@@ -1,34 +1,36 @@
+'use strict';
+
 window.jQuery = window.$ = require('jquery');
-var velocity = require('velocity-animate');
+const velocity = require('velocity-animate');
 
-module.exports = function(){
-  var $stage = $('#eyecatch');
-  var $modelInner = $('#modelInner');
-  var $textInner = $('#textInner');
-  var pageX = 0;
-  var pageY = 0;
-  var winW = $(window).width();
-  var winH = $(window).height();
+module.exports = () => {
+  const $stage = $('#eyecatch');
+  const $modelInner = $('#modelInner');
+  const $textInner = $('#textInner');
+  let pageX = 0;
+  let pageY = 0;
+  let winW = $(window).width();
+  let winH = $(window).height();
 
-  $(window).on('resize', function(){
+  $(window).on('resize', () => {
     winW = $(window).width();
     winH = $(window).height();
   });
 
-  $stage.on('mouseenter', function(e){
+  $stage.on('mouseenter', (e) => {
     parallax();
 
-    $(document).on('mousedown', function(e){
+    $(document).on('mousedown', (e) => {
       $stage.off('.parallax');
     });
 
-    $(document).on('mouseup', function(e){
+    $(document).on('mouseup', (e) => {
       parallax();
     });
   });
 
-  function parallax(){
-    $stage.on('mousemove.parallax', function(e){
+  let parallax = () => {
+    $stage.on('mousemove.parallax', (e) => {
       // ウインドウ中心からの座標
       pageX = e.clientX - winW/2;
       pageY = e.clientY - winH/2;

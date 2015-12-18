@@ -1,26 +1,25 @@
 'use strict';
 
-(function(){
-
 window.jQuery = window.$ = require('jquery');
-var UAParser = require('ua-parser-js');
-var parser = new UAParser();
-var ua = parser.getResult();
+const UAParser = require('ua-parser-js');
+const parser = new UAParser();
+const ua = parser.getResult();
 
+(() => {
 
 // ページ読み込み後の処理
-$(function(){
+$(() => {
   init();
 });
 
 
 // 初期化関数
-function init(){
+let init = () =>{
   // アイキャッチの画像取得
   require('./modules/getImages.js')();
 
   // ちょい遅延させてローディング出す
-  setTimeout(function(){
+  setTimeout(() => {
     $('#loadingLoader').css({ 'display':'block' });
   }, 500);
   // ローディング出したあとの処理

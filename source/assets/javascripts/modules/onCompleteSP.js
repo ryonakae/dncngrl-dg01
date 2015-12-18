@@ -1,22 +1,24 @@
+'use strict';
+
 window.jQuery = window.$ = require('jquery');
-var velocity = require('velocity-animate');
-var imagesLoaded = require('imagesloaded');
+const velocity = require('velocity-animate');
+const imagesLoaded = require('imagesloaded');
 imagesLoaded.makeJQueryPlugin($);
-var transition = require('jquery.transit');
+const transition = require('jquery.transit');
 
 
-module.exports = function(){
-  var $model = $('#model');
-  var $text = $('#text, #subText');
+module.exports = () => {
+  const $model = $('#model');
+  const $text = $('#text, #subText');
 
   // ローディング消す
-  setTimeout(function(){
+  setTimeout(() => {
     $('#loadingLoader').css({ 'display':'none' });
   }, 500);
 
   // アイキャッチとテキストのフェードイン
   // スマホ時だけ、velocityだとtransformがバグるのでjquery.transitで
-  $model.imagesLoaded(function(){
+  $model.imagesLoaded(() => {
     // modelのフェードイン
     $model.transition({
       opacity: 1,

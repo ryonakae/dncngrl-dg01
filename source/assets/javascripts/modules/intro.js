@@ -1,13 +1,15 @@
-window.jQuery = window.$ = require('jquery');
-var velocity = require('velocity-animate');
+'use strict';
 
-module.exports = function(onComplete){
-  var $loader = $('#loadingLoader');
-  var $text01 = $('#loadingText01');
-  var $text02 = $('#loadingText02');
+window.jQuery = window.$ = require('jquery');
+const velocity = require('velocity-animate');
+
+module.exports = (onComplete) => {
+  const $loader = $('#loadingLoader');
+  const $text01 = $('#loadingText01');
+  const $text02 = $('#loadingText02');
 
   // ローディング消す
-  setTimeout(function(){
+  setTimeout(() => {
     $loader.css({ 'display':'none' });
   }, 500);
 

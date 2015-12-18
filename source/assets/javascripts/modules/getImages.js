@@ -1,12 +1,14 @@
-window.jQuery = window.$ = require('jquery');
-var UAParser = require('ua-parser-js');
-var parser = new UAParser();
-var ua = parser.getResult();
-var async = require('async');
+'use strict';
 
-module.exports = function(){
+const jQuery = require('jquery');
+const $ = require('jquery');
+const UAParser = require('ua-parser-js');
+const parser = new UAParser();
+const ua = parser.getResult();
+
+module.exports = () => {
   // 画像一覧取得：スマホの時は最初の1枚だけ
-  var imageList = [];
+  let imageList = [];
   if( ua.device.type === 'mobile' || ua.device.type === 'tablet' ){
     imageList = ['00'];
   } else {
@@ -21,9 +23,9 @@ module.exports = function(){
   }
 
   // imgタグを生成して画像を読み込む
-  var images = '';
-  for(var i = 0; i < imageList.length; i++){
-    var url = './assets/images/model/model_'+imageList[i]+'.png';
+  let images = '';
+  for(let i = 0; i < imageList.length; i++){
+    let url = './assets/images/model/model_'+imageList[i]+'.png';
     // var url = '//file.brdr.jp/dncngrl_01/images/model/model_'+imageList[i]+'.png';
     images += '<img src="' + url + '" />';
   }

@@ -28,7 +28,8 @@ gulp.task 'browserify', ->
 # compile function
 compile = (isProduction) ->
   option =
-    transform: [babelify, coffeeify]
+    transform: [babelify]
+    presets: ['es2015']
     debug: true
     extensions: ['.js']
   bundler = null

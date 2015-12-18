@@ -1,23 +1,25 @@
+'use strict';
+
 window.jQuery = window.$ = require('jquery');
-var velocity = require('velocity-animate');
+const velocity = require('velocity-animate');
 
-module.exports = function(){
-  var $stage = $('#eyecatch');
-  var $model = $('#model');
-  var $sprite = $('#modelList');
-  var spriteSize = $sprite.children().eq(0).height();
-  var spriteNumber = 30;
-  var spritePage = 0;
-  var pageX = 0;
-  var thinMove = 5;
+module.exports = () => {
+  const $stage = $('#eyecatch');
+  const $model = $('#model');
+  const $sprite = $('#modelList');
+  let spriteSize = $sprite.children().eq(0).height();
+  const spriteNumber = 30;
+  let spritePage = 0;
+  let pageX = 0;
+  const thinMove = 5;
 
-  $stage.on('mousedown', function(e){
+  $stage.on('mousedown', (e) => {
     $model.css({ 'top': '5px' });
 
     $('body').addClass('is-draggable');
     pageX = e.pageX;
 
-    $stage.on('mousemove.rotateModel', function(e){
+    $stage.on('mousemove.rotateModel', (e) => {
       if(e.pageX >= pageX + thinMove){
         pageX = e.pageX;
 
@@ -39,12 +41,12 @@ module.exports = function(){
       $sprite.css({ 'top': '-' + spriteSize * spritePage +  'px' });
     });
 
-    $(document).on('mouseleave', function(e){
+    $(document).on('mouseleave', (e) => {
       $model.css({ 'top': 0 });
       $stage.off('.rotateModel');
       $('body').removeClass('is-draggable');
     });
-    $(document).on('mouseup', function(e){
+    $(document).on('mouseup', (e) => {
       $model.css({ 'top': 0 });
       $stage.off('.rotateModel');
       $('body').removeClass('is-draggable');
@@ -53,7 +55,7 @@ module.exports = function(){
 
 
   // リサイズ時：リセットする
-  $(window).on('resize', function(){
+  $(window).on('resize', () => {
     // スプライト画像の高さ再取得する
     spriteSize = $sprite.children().eq(0).height();
 

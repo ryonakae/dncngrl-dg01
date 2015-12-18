@@ -1,19 +1,21 @@
+'use strict';
+
 window.jQuery = window.$ = require('jquery');
-var velocity = require('velocity-animate');
-var imagesLoaded = require('imagesloaded');
+const velocity = require('velocity-animate');
+const imagesLoaded = require('imagesloaded');
 imagesLoaded.makeJQueryPlugin($);
-var intro = require('./intro.js');
+const intro = require('./intro.js');
 
 
-module.exports = function(){
-  var $model = $('#model');
-  var $text = $('#text, #subText');
-  var $drag = $('#eyecatchDrag');
+module.exports = () => {
+  const $model = $('#model');
+  const $text = $('#text, #subText');
+  const $drag = $('#eyecatchDrag');
 
   // アイキャッチの回転有効化
-  $model.imagesLoaded(function(){
+  $model.imagesLoaded(() => {
     // イントロ再生&再生後の処理
-    intro(function(){
+    intro(() => {
       // modelのフェードインと回転有効化
       $model.velocity({
         opacity: 1,
