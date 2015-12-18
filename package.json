@@ -9,6 +9,7 @@
     "browser-sync": "^2.9.11",
     "browserify": "^11.2.0",
     "coffee-script": "^1.10.0",
+    "coffeeify": "^2.0.1",
     "gulp": "^3.9.0",
     "gulp-cache": "^0.3.0",
     "gulp-combine-media-queries": "^0.2.0",
@@ -39,6 +40,7 @@
   "dependencies": {
     "imagesloaded": "^3.2.0",
     "jquery": "^2.1.4",
+    "jquery.transit": "^0.9.12",
     "ua-parser-js": "^0.7.10",
     "velocity-animate": "^1.2.3"
   }

@@ -3,6 +3,7 @@ path = require '../path'
 env = require '../env'
 browserify = require 'browserify'
 babelify = require 'babelify'
+coffeeify = require 'coffeeify'
 watchify = require 'watchify'
 source = require 'vinyl-source-stream'
 buffer = require 'vinyl-buffer'
@@ -27,7 +28,7 @@ gulp.task 'browserify', ->
 # compile function
 compile = (isProduction) ->
   option =
-    transform: [babelify]
+    transform: [babelify, coffeeify]
     debug: true
     extensions: ['.js']
   bundler = null
