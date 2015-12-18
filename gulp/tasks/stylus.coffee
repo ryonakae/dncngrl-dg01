@@ -10,6 +10,7 @@ combineMediaQueries = require 'gulp-combine-media-queries'
 csscomb = require 'gulp-csscomb'
 minifyCss = require 'gulp-minify-css'
 gulpif = require 'gulp-if'
+replace = require 'gulp-replace'
 
 
 gulp.task 'stylus', ->
@@ -29,6 +30,7 @@ gulp.task 'stylus', ->
       set:
         "include css": true
     .pipe gulpif env.isProduction == false, sourcemaps.write './'
+    .pipe gulpif env.isProduction == true, replace '../', '//file.brdr.jp/dncngrl_01/'
     .pipe gulpif env.isProduction == true, combineMediaQueries()
     .pipe gulpif env.isProduction == true, csscomb()
     .pipe gulpif env.isProduction == true, minifyCss()
