@@ -14,6 +14,7 @@ module.exports = function(callback){
   function checker(){
     // Facebook JavaScript SDKのロード完了したら処理実行
     if( window.FB ) {
+      // checker止める
       clearInterval(checkerID);
       // likeボタンのレンダリングが完了したら処理実行
       FB.Event.subscribe('xfbml.render', callback);

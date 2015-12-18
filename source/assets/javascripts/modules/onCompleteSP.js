@@ -2,6 +2,7 @@ window.jQuery = window.$ = require('jquery');
 var velocity = require('velocity-animate');
 var imagesLoaded = require('imagesloaded');
 imagesLoaded.makeJQueryPlugin($);
+var transition = require('jquery.transit');
 
 
 module.exports = function(){
@@ -14,21 +15,20 @@ module.exports = function(){
   }, 500);
 
   // アイキャッチとテキストのフェードイン
+  // スマホ時だけ、velocityだとtransformがバグるのでjquery.transitで
   $model.imagesLoaded(function(){
     // modelのフェードイン
-    // スマホ時だけ、velocityだとtransformがバグるのでanimateで
-    setTimeout(function(){
-      $model.animate({
-        'opacity': 1,
-        'top': 0
-      }, 500, 'swing');
-    }, 1500);
+    $model.transition({
+      opacity: 1,
+      top: 0,
+      delay: 1500
+    }, 800, 'easeOutExpo');
 
     // テキストのフェードイン
-    // スマホ時だけ、velocityだとtransformがバグるのでanimateで
-    setTimeout(function(){
-      $text.animate({ 'opacity':1 }, 500, 'swing');
-    }, 1500);
+    $text.transition({
+      opacity: 1,
+      delay: 1500
+    }, 800, 'ease');
 
     // snsボタン読み込み
     setTimeout(require('./loadSnsButtons.js'), 2000);
