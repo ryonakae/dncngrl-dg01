@@ -22,11 +22,11 @@
 
 @keyframes drag_blink
   0%
-    opacity 1
-  50%
     opacity 0
-  100%
+  50%
     opacity 1
+  100%
+    opacity 0
 
 
 .eyecatch
@@ -70,6 +70,7 @@
     width 926px
     height 800px
     left 50%
+    top -5%
     transform translate3d(-50%, -0.25%, 0)
     opacity 0
 
@@ -171,6 +172,7 @@
 
     &.is-animation
       animation drag_blink 3s ease infinite
+      display block
 
     +retina-query(only screen, 2)
       background-image url('../images/eyecatch_drag-2x.png')

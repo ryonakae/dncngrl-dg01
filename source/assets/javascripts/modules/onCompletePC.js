@@ -19,17 +19,18 @@ module.exports = function(){
         opacity: 1,
         top: 0
       }, {
-        duration: 500,
+        duration: 800,
         delay: 1500,
-        easing: 'ease',
+        easing: 'easeOutExpo',
         complete: function(){
           require('./parallax.js')();
           require('./rotateModel.js')();
-          setTimeout(function(){
-            $model.addClass('is-animation');
-          }, 1000);
           // snsボタン読み込み
-          require('./loadSnsButtons.js')();
+          require('./loadSnsButtons.js')(function(){
+            // likeボタンのレンダリング完了したらCSSアニメーション開始
+            $model.addClass('is-animation');
+            $drag.addClass('is-animation');
+          });
         }
       });
 
@@ -37,24 +38,10 @@ module.exports = function(){
       $text.velocity({
         opacity: 1
       }, {
-        duration: 500,
+        duration: 800,
         delay: 1500,
         easing: 'ease'
       });
-
-      // dragのフェードイン
-      $drag.velocity({
-        opacity: 1
-      }, {
-        display: 'block',
-        duration: 500,
-        delay: 1500,
-        easing: 'ease',
-        complete: function(){
-          // 点滅アニメーション開始
-          $(this).addClass('is-animation');
-        }
-      }).bind(this);
     });
   });
 };
