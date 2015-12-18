@@ -2,23 +2,18 @@
 
 @import '_config'
 
-// font-face( 'ProximaNova', '//file.brdr.jp/dncngrl_01/fonts/ProximaNova-Regular', normal, normal, formats: eot woff )
-// font-face( 'ProximaNova', '//file.brdr.jp/dncngrl_01/fonts/ProximaNova-Regular-Italic', normal, italic, formats: eot woff )
-// font-face( 'ProximaNova', '//file.brdr.jp/dncngrl_01/fonts/ProximaNova-Semibold', bold, normal, formats: eot woff )
-// font-face( 'ProximaNova', '//file.brdr.jp/dncngrl_01/fonts/ProximaNova-Semibold-Italic', bold, italic, formats: eot woff )
-// font-face( 'Noto Sans Japanese', '//file.brdr.jp/dncngrl_01/fonts/NotoSansJP-Regular', normal, normal, formats: eot woff )
-
-font-face( 'ProximaNova', '../fonts/ProximaNova-Regular', normal, normal, formats: eot woff )
-font-face( 'ProximaNova', '../fonts/ProximaNova-Regular-Italic', normal, italic, formats: eot woff )
-font-face( 'ProximaNova', '../fonts/ProximaNova-Semibold', bold, normal, formats: eot woff )
-font-face( 'ProximaNova', '../fonts/ProximaNova-Semibold-Italic', bold, italic, formats: eot woff )
-font-face( 'Noto Sans Japanese', '../fonts/NotoSansJP-Regular', normal, normal, formats: eot woff )
+font-face( 'ProximaNova', '../fonts/ProximaNova-Regular', normal, normal, formats: woff )
+font-face( 'ProximaNova', '../fonts/ProximaNova-Regular-Italic', normal, italic, formats: woff )
+font-face( 'ProximaNova', '../fonts/ProximaNova-Semibold', bold, normal, formats: woff )
+font-face( 'ProximaNova', '../fonts/ProximaNova-Semibold-Italic', bold, italic, formats: woff )
+font-face( 'NotoSansJapanese', '../fonts/NotoSansJP-Regular', normal, normal, formats: woff )
 
 normalize()
 box-sizing-reset()
 
 body
-  font-family 'ProximaNova', 'Avenir Next', Avenir, 'Helvetica Neue', Helvetica, Arial, 'Noto Sans Japanese', 'ヒラギノ角ゴ ProN W3', 'Hiragino Kaku Gothic ProN', 'メイリオ', Meiryo, sans-serif
+  padding 0 !important
+  font-family ProximaNova, 'Avenir Next', Avenir, 'Helvetica Neue', Helvetica, Arial, NotoSansJapanese, 'ヒラギノ角ゴ ProN W3', 'Hiragino Kaku Gothic ProN', 'メイリオ', Meiryo, sans-serif
   font-size $fontSize_default
   line-height $lineHeight_default
   letter-spacing $letterSpacing_default
@@ -38,6 +33,9 @@ body
   // eyecatch rotate
   &.is-draggable
     user-select none
+
+  .tmblr-iframe
+    display none !important
 
 
 a

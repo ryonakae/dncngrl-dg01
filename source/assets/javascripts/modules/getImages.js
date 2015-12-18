@@ -25,8 +25,8 @@ module.exports = () => {
   // imgタグを生成して画像を読み込む
   let images = '';
   for(let i = 0; i < imageList.length; i++){
-    let url = './assets/images/model/model_'+imageList[i]+'.png';
-    // var url = '//file.brdr.jp/dncngrl_01/images/model/model_'+imageList[i]+'.png';
+    // let url = './assets/images/model/model_'+imageList[i]+'.png';
+    var url = '//file.brdr.jp/dncngrl_01/images/model/model_'+imageList[i]+'.png';
     images += '<img src="' + url + '" />';
   }
   $('#modelList').html(images);
