@@ -7,11 +7,15 @@ coffeeify = require 'coffeeify'
 watchify = require 'watchify'
 source = require 'vinyl-source-stream'
 buffer = require 'vinyl-buffer'
-uglify = require 'gulp-uglify'
+uglifyEs = require 'uglify-es'
+uglifyComposer = require 'gulp-uglify/composer'
 sourcemaps = require 'gulp-sourcemaps'
 gutil = require 'gulp-util'
 gulpif = require 'gulp-if'
 prettyHrtime = require 'pretty-hrtime'
+
+
+minify = uglifyComposer uglifyEs, console
 
 
 # path
@@ -59,8 +63,7 @@ compile = (isProduction) ->
       .pipe gulpif isProduction == false, sourcemaps.init
         loadMaps: true
       .pipe gulpif isProduction == false, sourcemaps.write './'
-      .pipe gulpif isProduction == true, uglify
-        preserveComments: 'some'
+      .pipe gulpif isProduction == true, minify()
       .on 'end', bundleLogger.end
       .pipe gulp.dest destPath
 
