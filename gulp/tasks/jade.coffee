@@ -4,7 +4,6 @@ env = require '../env'
 jade = require 'gulp-jade'
 plumber = require 'gulp-plumber'
 gulpif = require 'gulp-if'
-replace = require 'gulp-replace'
 
 
 gulp.task 'jade', ->
@@ -16,5 +15,4 @@ gulp.task 'jade', ->
     .pipe plumber()
     .pipe jade
       pretty: true
-    .pipe gulpif env.isProduction == true, replace 'assets/', 'http://file.brdr.jp/dncngrl_01/'
     .pipe gulp.dest path.build.root
